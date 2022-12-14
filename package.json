@@ -1,0 +1,20 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekagharibashvili/Node.js_Fundamental_Theory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekagharibashvili/Node.js_Fundamental_Theory/issues"
+  },
+  "homepage": "https://github.com/ekagharibashvili/Node.js_Fundamental_Theory#readme"
+}
