@@ -2,9 +2,11 @@
   "name": "node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1": "nodemon task1/readString.js",
+    "task2": "nodemon task2/readCSV.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/ekagharibashvili/Node.js_Fundamental_Theory/issues"
   },
-  "homepage": "https://github.com/ekagharibashvili/Node.js_Fundamental_Theory#readme"
+  "homepage": "https://github.com/ekagharibashvili/Node.js_Fundamental_Theory#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "csv-parse": "^5.3.3",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "csvtojson": "^2.0.10",
+    "fast-csv": "^4.3.6"
+  }
 }
