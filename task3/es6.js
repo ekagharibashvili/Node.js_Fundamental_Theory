@@ -18,8 +18,8 @@ fs.createReadStream(file)
     onCompleted
   );
 
- csv()
-  .fromFile(file)
+csv()
+  .fromStream(fs.createReadStream(file))
   .then(
     (jsonObj) => {
       fs.createWriteStream(output).write(JSON.stringify(jsonObj) + "\n");
@@ -27,5 +27,3 @@ fs.createReadStream(file)
     onError,
     onCompleted
   );
-
- 
