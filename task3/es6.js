@@ -8,7 +8,7 @@ import onCompleted from "./onComplete";
 
 csv()
   .fromStream(fs.createReadStream(file))
-  .then(
+  .subscribe(
     (jsonObj) => {
       fs.createWriteStream(output).write(JSON.stringify(jsonObj) + "\n");
     },
