@@ -18,7 +18,7 @@ fs.createReadStream(file)
     onCompleted
   );
 
-csv()
+ csv()
   .fromFile(file)
   .then(
     (jsonObj) => {
@@ -28,3 +28,4 @@ csv()
     onCompleted
   );
 
+ 
