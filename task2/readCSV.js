@@ -1,25 +1,34 @@
-const csv = require("csv-parser");
 const fs = require("fs");
-const csvtojson = require("csvtojson");
+const csv = require("csvtojson");
 const file = process.cwd() + "/csv/ex.csv";
+const output = "output.txt";
 
-// parsing CSV
 let results = [];
 fs.createReadStream(file)
   .pipe(csv({}))
-  .on("data", (data) => results.push(data))
-  .on("end", () => {
-    console.log(results);
-  })
-  .on("error", (error) => {
-    console.log(error.message);
-  });
+  .on(
+    "data",
+    (data) => {
+      results.push(data);
+    },
+    onError,
+    onCompleted
+  );
 
-//  convert csvfile to jsonobject using the csvtojsonpackage
-csvtojson()
+csv()
   .fromFile(file)
-  .then((jsonObj) => {
-    console.log(jsonObj);
-  });
+  .then(
+    (jsonObj) => {
+      fs.createWriteStream(output).write(JSON.stringify(jsonObj) + "\n");
+    },
+    onError,
+    onCompleted
+  );
 
+function onError(err) {
+  console.error(err);
+}
 
+function onCompleted() {
+  console.log("CSV transformed to TXT");
+}
