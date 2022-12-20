@@ -6,18 +6,6 @@ const output = "output.txt";
 import onError from "./onError";
 import onCompleted from "./onComplete";
 
-let results = [];
-fs.createReadStream(file)
-  .pipe(csv({}))
-  .on(
-    "data",
-    (data) => {
-      results.push(data);
-    },
-    onError,
-    onCompleted
-  );
-
 csv()
   .fromStream(fs.createReadStream(file))
   .then(
